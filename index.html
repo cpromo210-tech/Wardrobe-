@@ -55,6 +55,7 @@ nav button.on{color:var(--gold);border-bottom-color:var(--gold)}
 .pcimg img{width:100%;height:100%;object-fit:cover}
 .pcimg .ph{font-size:22px;opacity:.25}
 .pcsw{position:absolute;top:8px;left:8px;width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35)}
+.pctype{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.62);border-radius:20px;padding:2px 7px;font-size:12px;line-height:1.3}
 .pcx{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.6);border:none;color:var(--dim);width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:13px;line-height:1}
 .pcx:hover{color:var(--red)}
 .pcb{padding:11px 12px}
@@ -109,6 +110,37 @@ nav button.on{color:var(--gold);border-bottom-color:var(--gold)}
 .swb{width:28px;height:28px;border-radius:7px;border:2px solid transparent;cursor:pointer;position:relative}
 .swb.on{border-color:var(--txt);transform:scale(1.1)}
 
+/* ADD PHOTO + DETECT */
+.addphoto{display:flex;gap:14px;align-items:stretch;flex-wrap:wrap}
+.addthumb{width:96px;height:120px;flex-shrink:0;border-radius:10px;background:var(--card2);border:1.5px dashed var(--line2);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative;transition:.15s}
+.addthumb:hover{border-color:var(--gold)}
+.addthumb img{width:100%;height:100%;object-fit:cover}
+.addthumb .ph{font-size:26px;opacity:.35}
+.addtag{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:1.4px;color:var(--dim);margin-top:8px}
+.detbox{background:var(--card2);border:1px solid var(--line2);border-radius:9px;padding:12px;min-height:56px;display:flex;align-items:center;gap:11px;font-size:12px}
+.detsw{width:34px;height:34px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);flex-shrink:0}
+.detname{font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:1;color:var(--gold)}
+.detsub{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--dim);margin-top:3px}
+.gchips{display:flex;gap:6px;flex-wrap:wrap}
+.gchip{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:10px;background:var(--bg);border:1.5px solid var(--line2);color:var(--mid);padding:6px 11px 6px 6px;border-radius:20px;cursor:pointer}
+.gchip span{width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,.2)}
+.gchip.on{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.08)}
+.quick{display:flex;gap:6px;flex-wrap:wrap}
+.qk{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.05em;background:var(--card2);border:1px solid var(--line2);color:var(--mid);padding:8px 12px;border-radius:20px;cursor:pointer}
+.qk:hover{border-color:var(--gold);color:var(--gold)}
+
+/* WISHLIST */
+.pcw.wish{color:var(--blu)}
+.pcactions{display:flex;gap:5px;padding:0 12px 11px}
+.pcbtn{flex:1;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.06em;background:var(--card2);border:1px solid var(--line2);color:var(--dim);padding:7px 4px;border-radius:6px;cursor:pointer;text-align:center;text-transform:uppercase}
+.pcbtn:hover{border-color:var(--gold);color:var(--gold)}
+.pcbtn.go{border-color:rgba(74,222,128,.4);color:var(--grn)}
+.pclink{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.6);border:none;color:var(--gold);width:22px;height:22px;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center}
+.wcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px;display:flex;gap:13px}
+.wthumb{width:74px;height:92px;flex-shrink:0;border-radius:9px;background:var(--card2);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.wthumb img{width:100%;height:100%;object-fit:cover}
+.wbody{flex:1;min-width:0}
+
 /* MEASURE */
 .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px}
 .mi{background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:12px}
@@ -137,6 +169,8 @@ nav button.on{color:var(--gold);border-bottom-color:var(--gold)}
 .emp{background:var(--card);border:1px dashed var(--line2);border-radius:11px;padding:26px 18px;text-align:center;font-size:12.5px;color:var(--dim);line-height:1.9}
 .emp b{color:var(--txt)}
 
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;background:var(--card2);border:1px solid var(--line2);border-radius:20px;padding:4px 10px 4px 5px;color:var(--mid)}
+.chip span{width:14px;height:14px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:inline-block}
 .pill{display:inline-block;font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.14em;padding:3px 8px;border-radius:20px;text-transform:uppercase;border:1px solid}
 .pill.own{color:var(--grn);border-color:var(--grn)}
 .pill.buy{color:var(--gold);border-color:var(--gold)}
@@ -167,9 +201,12 @@ footer{text-align:center;padding:34px 16px 0;font-family:'DM Mono',monospace;fon
 <nav><div class="nv">
   <button class="on" data-t="closet">Closet</button>
   <button data-t="outfits">Outfits</button>
+  <button data-t="wish">Wishlist</button>
   <button data-t="next">Next Buy</button>
   <button data-t="fit">Your Fit</button>
+  <button data-t="color">Color Guide</button>
   <button data-t="basics">10 Basics</button>
+  <button data-t="shop">Online Shops</button>
   <button data-t="brands">Brands</button>
   <button data-t="stores">SA Stores</button>
   <button data-t="care">Care</button>
@@ -180,9 +217,12 @@ footer{text-align:center;padding:34px 16px 0;font-family:'DM Mono',monospace;fon
 <div class="wrap">
   <div class="pn on" id="closet"></div>
   <div class="pn" id="outfits"></div>
+  <div class="pn" id="wish"></div>
   <div class="pn" id="next"></div>
   <div class="pn" id="fit"></div>
+  <div class="pn" id="color"></div>
   <div class="pn" id="basics"></div>
+  <div class="pn" id="shop"></div>
   <div class="pn" id="brands"></div>
   <div class="pn" id="stores"></div>
   <div class="pn" id="care"></div>
@@ -191,6 +231,7 @@ footer{text-align:center;padding:34px 16px 0;font-family:'DM Mono',monospace;fon
 </div>
 
 <input type="file" id="pf" accept="image/*">
+<input type="file" id="cf" accept="image/*">
 <div class="tst" id="tst"></div>
 <footer>Fit over brand, every time · Get measured, then shop<br>10 right pieces beats 40 wrong ones</footer>
 
@@ -240,6 +281,89 @@ function cmatch(a,b){
   return 0;
 }
 
+/* ── COLOR DETECTION (photo → nearest grid colour, CIELAB) ── */
+function hex2rgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+function rgb2lab(r,g,b){
+  r/=255;g/=255;b/=255;
+  r=r>0.04045?Math.pow((r+0.055)/1.055,2.4):r/12.92;
+  g=g>0.04045?Math.pow((g+0.055)/1.055,2.4):g/12.92;
+  b=b>0.04045?Math.pow((b+0.055)/1.055,2.4):b/12.92;
+  let x=(r*0.4124+g*0.3576+b*0.1805)/0.95047;
+  let y=(r*0.2126+g*0.7152+b*0.0722)/1.0;
+  let z=(r*0.0193+g*0.1192+b*0.9505)/1.08883;
+  x=x>0.008856?Math.cbrt(x):7.787*x+16/116;
+  y=y>0.008856?Math.cbrt(y):7.787*y+16/116;
+  z=z>0.008856?Math.cbrt(z):7.787*z+16/116;
+  return [116*y-16,500*(x-y),200*(y-z)];
+}
+const LABS={};CK.forEach(c=>{const [r,g,b]=hex2rgb(CO[c].h);LABS[c]=rgb2lab(r,g,b);});
+function nearestColor(r,g,b){
+  const L=rgb2lab(r,g,b);let best=null,bd=1e9;
+  CK.forEach(c=>{
+    const q=LABS[c];
+    const d=Math.pow(L[0]-q[0],2)+Math.pow(L[1]-q[1],2)+Math.pow(L[2]-q[2],2);
+    if(d<bd){bd=d;best=c;}
+  });
+  return best;
+}
+/* ranked list of closest grid colours */
+function topColors(r,g,b,n){
+  const L=rgb2lab(r,g,b);
+  return CK.map(c=>{
+    const q=LABS[c];
+    const d=Math.sqrt(Math.pow(L[0]-q[0],2)+Math.pow(L[1]-q[1],2)+Math.pow(L[2]-q[2],2));
+    return {c:c,d:d};
+  }).sort((a,b)=>a.d-b.d).slice(0,n||3);
+}
+/* sample the centre patch, white-balance off the brightest neutral pixels, return ranked guesses */
+function detectFromImage(im){
+  const c=document.createElement('canvas'),S=140;c.width=S;c.height=S;
+  const ctx=c.getContext('2d');
+  const side=Math.min(im.width,im.height);
+  const sx=(im.width-side)/2, sy=(im.height-side)/2;
+  ctx.drawImage(im,sx,sy,side,side,0,0,S,S);
+  const d=ctx.getImageData(0,0,S,S).data;
+
+  /* pass 1: find a white reference from the brightest near-neutral pixels
+     (they should read as pure white; the cast tells us the lighting) */
+  let wr=0,wg=0,wb=0,wn=0,bestLum=0;
+  for(let i=0;i<d.length;i+=4){
+    const R=d[i],G=d[i+1],B=d[i+2];
+    const mx=Math.max(R,G,B),mn=Math.min(R,G,B);
+    if(mx<170)continue;                 // only bright pixels
+    if(mx-mn>40)continue;               // only near-neutral (not a saturated colour)
+    const lum=R+G+B;
+    if(lum>bestLum-90){ wr+=R;wg+=G;wb+=B;wn++; if(lum>bestLum)bestLum=lum; }
+  }
+  /* gain factors — normalise the reference toward neutral grey */
+  let gr=1,gg=1,gb=1;
+  if(wn>4){
+    const ar=wr/wn,ag=wg/wn,ab=wb/wn,avg=(ar+ag+ab)/3;
+    gr=avg/ar; gg=avg/ag; gb=avg/ab;
+    /* clamp so a wild reference can't over-correct */
+    gr=Math.min(1.35,Math.max(0.75,gr));
+    gg=Math.min(1.35,Math.max(0.75,gg));
+    gb=Math.min(1.35,Math.max(0.75,gb));
+  }
+
+  /* pass 2: average the central 50%, skip background, apply white balance */
+  let r=0,g=0,b=0,n=0;
+  const lo=S*0.25|0, hi=S*0.75|0;
+  for(let y=lo;y<hi;y++)for(let x=lo;x<hi;x++){
+    const i=(y*S+x)*4;
+    let R=d[i]*gr,G=d[i+1]*gg,B=d[i+2]*gb;
+    R=Math.min(255,R);G=Math.min(255,G);B=Math.min(255,B);
+    const mx=Math.max(R,G,B),mn=Math.min(R,G,B);
+    if(mx>248&&mn>240)continue;         // paper-white background
+    if(mx<8)continue;                   // pure black shadow
+    r+=R;g+=G;b+=B;n++;
+  }
+  if(!n){n=1;r=d[0]*gr;g=d[1]*gg;b=d[2]*gb;}
+  r=Math.round(r/n);g=Math.round(g/n);b=Math.round(b/n);
+  const ranked=topColors(r,g,b,3);
+  return {rgb:[r,g,b],color:ranked[0].c,ranked:ranked,balanced:(wn>4)};
+}
+
 /* ── BRAND SIZING ── */
 const BR={
 "Zara":{f:"slim",n:"Runs slim and short. Size up if you are between sizes or carry any shoulder width."},
@@ -277,6 +401,25 @@ function sizeFor(brand,chest){
 /* ── SLOTS ── */
 const SLOT={top:"Top",bottom:"Bottom",shoe:"Shoes",layer:"Layer",belt:"Belt"};
 const FORM=["","Casual","Smart Casual","Dressy"];
+
+/* ── SHOE TYPES ──
+   form: which formality levels this shoe can carry
+   bottoms: which bottom kinds it is allowed with (strict rules)
+   A dress shoe never with shorts; a sandal/clog never with trousers. */
+const SHOES={
+  sneaker_retro:{n:"Retro / Court Sneaker",form:[1,2],bottoms:["jean","chino","trouser","short"],ex:"Nike Killshot, Samba, Stan Smith",ic:"👟"},
+  sneaker_chunky:{n:"Chunky / Skater Sneaker",form:[1],bottoms:["jean","chino","short"],ex:"chunky white skaters, dad shoes",ic:"👟"},
+  boot_work:{n:"Work / Rugged Boot",form:[1,2],bottoms:["jean","chino","trouser"],ex:"Timberland originals, hikers",ic:"🥾"},
+  boot_chelsea:{n:"Chelsea / Ankle Boot",form:[2,3],bottoms:["jean","chino","trouser"],ex:"suede chelsea, leather ankle boot",ic:"🥾"},
+  boot_dress:{n:"Leather Dress Boot",form:[2,3],bottoms:["jean","chino","trouser"],ex:"lace-up dress boot, cap-toe boot",ic:"🥾"},
+  loafer_penny:{n:"Penny / Horsebit Loafer",form:[2,3],bottoms:["chino","trouser","jean"],ex:"penny loafer, Gucci horsebit",ic:"🥿"},
+  loafer_chunky:{n:"Chunky / Tassel Loafer",form:[2,3],bottoms:["chino","trouser","jean"],ex:"chunky tassel loafer, lug loafer",ic:"🥿"},
+  dress:{n:"Dress Shoe",form:[3],bottoms:["trouser","chino"],ex:"Aldo pointed-toe, oxford, derby",ic:"👞"},
+  sandal:{n:"Sandal",form:[1],bottoms:["short","jean"],ex:"Birkenstock Arizona, slides",ic:"🩴"},
+  clog:{n:"Clog / Mule",form:[1],bottoms:["jean","chino","short"],ex:"Birkenstock Boston, leather clog",ic:"🥿"}
+};
+/* bottom kinds — inferred from a bottom's fit/name, or set manually */
+const BOTTOMS={trouser:"Trousers",chino:"Chinos",jean:"Jeans",short:"Shorts"};
 
 /* ── THE 10 BASICS (+3 from the brand guide) ── */
 const BASICS=[
@@ -360,25 +503,47 @@ const SALE=[
 /* ── STATE ── */
 let W={
   closet:L('closet',[]),      // {id,base,n,slot,c,form,fit,price,img,wears:[],added}
+  wish:L('wish',[]),          // {id,base,n,slot,c,form,fit,price,img,url,store,added}
   fav:L('fav',[]),
   meas:L('meas',{}),
   care:L('care',{}),          // {leather_boots:'2026-07-01'}
   sess:L('sess',[]),          // shopping sessions
   season:L('season','all'),
+  shoeFilter:L('shoeFilter','all'),
   locks:{}
 };
 
 /* ── OUTFIT ENGINE ── */
+/* infer a bottom's kind (trouser/chino/jean/short) if not explicitly set */
+function bottomKind(b){
+  if(b.bk)return b.bk;
+  const n=(b.n||'').toLowerCase();
+  if(/short/.test(n))return 'short';
+  if(/jean|denim/.test(n))return 'jean';
+  if(/trouser|pleat|slack|dress pant/.test(n))return 'trouser';
+  if(/chino|khaki/.test(n))return 'chino';
+  if(b.fit==='wide')return 'trouser';   // wide/pleated defaults to trouser
+  return 'chino';                        // safe middle default
+}
+/* a shoe's effective formality range: its type if set, else its generic form */
+function shoeForm(s){return (s.stype&&SHOES[s.stype])?SHOES[s.stype].form:s.form;}
+function isBootShoe(s){return s.stype?/^boot/.test(s.stype):s.base==='b2';}
+
 function valid(o){
   const t=o.top,b=o.bottom,s=o.shoe;
   if(!t||!b||!s)return 0;
   const vis=[t,b,s]; if(o.layer)vis.push(o.layer); if(o.belt)vis.push(o.belt);
   for(let i=0;i<vis.length;i++)for(let j=i+1;j<vis.length;j++)
     if(!cmatch(vis[i].c,vis[j].c))return 0;
-  if(o.belt&&s.base==='b2'&&o.belt.c!==s.c)return 0;      // belt = boot
+  /* STRICT: shoe type must be allowed with this bottom kind */
+  if(s.stype&&SHOES[s.stype]){
+    if(SHOES[s.stype].bottoms.indexOf(bottomKind(b))<0)return 0;
+  }
+  if(o.belt&&isBootShoe(s)&&o.belt.c!==s.c)return 0;       // belt = boot
   if(b.fit==='wide'&&t.fit!=='slim')return 0;              // wide bottom, slim top
+  /* formality intersection — shoe uses its type range */
   let lv=t.form.slice();
-  vis.forEach(p=>{lv=lv.filter(x=>p.form.indexOf(x)>-1);});
+  [b,s,o.layer,o.belt].forEach(p=>{if(!p)return;const pf=(p===s)?shoeForm(s):p.form;lv=lv.filter(x=>pf.indexOf(x)>-1);});
   if(!lv.length)return 0;
   return Math.min.apply(null,lv);
 }
@@ -426,27 +591,57 @@ function rCloset(){
   h+='<div class="hs"><div class="l">Invested</div><div class="v" style="color:var(--txt)">$'+spent+'</div><div class="s">'+(o.length?'$'+(spent/o.length).toFixed(2)+' per outfit':'no outfits yet')+'</div></div>';
   h+='<div class="hs"><div class="l">Total wears</div><div class="v" style="color:var(--grn)">'+W.closet.reduce((a,b)=>a+wears(b),0)+'</div><div class="s">logged from outfits</div></div>';
   h+='<div class="hs"><div class="l">Unworn 60+ days</div><div class="v" style="color:'+(dead.length?'var(--red)':'var(--dim)')+'">'+dead.length+'</div><div class="s">'+(dead.length?'dead weight in the closet':'nothing gathering dust')+'</div></div>';
+  h+='<div class="hs"><div class="l">On the wishlist</div><div class="v" style="color:var(--blu)">'+W.wish.length+'</div><div class="s">'+(W.wish.length?'waiting to be bought':'nothing saved yet')+'</div></div>';
   h+='</div>';
 
   if(!W.closet.length){
     h+='<div class="note gd"><b>Start here.</b> Add what you already own, then add what you buy. The moment you have a top, a bottom, and a shoe that all match on the color grid, the Outfits tab lights up. Every piece after that multiplies — the tenth piece is worth twelve outfits, the first is worth zero. That is what a capsule wardrobe actually means, and this app proves it with numbers instead of asserting it.</div>';
   }
 
-  /* ADD FORM */
-  h+='<div class="lb">Add a piece</div>';
-  h+='<div class="frm"><div class="fr">';
-  h+='<select id="a-base"><option value="">— Pick from the 10 Basics —</option>';
-  BASICS.forEach(b=>{h+='<option value="'+b.id+'">'+b.n+'</option>';});
-  h+='<option value="custom">Something else</option></select></div>';
-  h+='<div class="fr" id="a-custom" style="display:none"><input id="a-name" placeholder="What is it?">';
-  h+='<select id="a-slot">';
+  /* ADD FORM — free-form first, camera colour detect, 10-basics as quick sub-option */
+  h+='<div class="lb">Add a piece<span>snap a photo and it reads the colour for you</span></div>';
+  h+='<div class="frm">';
+
+  /* photo + auto colour */
+  h+='<div class="addphoto">';
+  h+='<div class="addthumb" id="a-thumb" data-a="capshot"><span class="ph">📷</span><div class="addtag">TAP TO SNAP</div></div>';
+  h+='<div style="flex:1;min-width:150px">';
+  h+='<div class="mono" style="font-size:8px;letter-spacing:1.4px;color:var(--dim);text-transform:uppercase;margin-bottom:6px">Detected colour</div>';
+  h+='<div id="a-detect" class="detbox"><span style="color:var(--dim2)">no photo yet — or pick below</span></div>';
+  h+='</div></div>';
+
+  h+='<div class="fr" style="margin-top:12px"><input id="a-name" placeholder="What is it? (e.g. ribbed henley)"></div>';
+  h+='<div class="fr"><select id="a-slot">';
   Object.keys(SLOT).forEach(s=>{h+='<option value="'+s+'">'+SLOT[s]+'</option>';});
   h+='</select>';
   h+='<select id="a-fit"><option value="slim">Slim fit</option><option value="reg">Regular fit</option><option value="wide">Wide / relaxed</option><option value="-">N/A</option></select></div>';
-  h+='<div class="lb" style="margin:12px 0 8px">Colour</div><div class="sw" id="a-sw">';
+
+  /* shoe type — only shows when slot=shoe */
+  h+='<div class="fr" id="a-shoerow" style="display:none"><select id="a-stype">';
+  h+='<option value="">— What kind of shoe? —</option>';
+  Object.keys(SHOES).forEach(k=>{h+='<option value="'+k+'">'+SHOES[k].ic+' '+SHOES[k].n+'</option>';});
+  h+='</select></div>';
+  h+='<div id="a-shoehint" class="mono" style="display:none;font-size:9px;color:var(--dim);margin:-2px 0 9px;line-height:1.7"></div>';
+
+  /* bottom kind — only shows when slot=bottom */
+  h+='<div class="fr" id="a-botrow" style="display:none"><select id="a-bk">';
+  h+='<option value="">— What kind of bottom? —</option>';
+  Object.keys(BOTTOMS).forEach(k=>{h+='<option value="'+k+'">'+BOTTOMS[k]+'</option>';});
+  h+='</select></div>';
+
+  h+='<div class="lb" style="margin:14px 0 8px">Colour<span>auto-set from your photo, or tap to override</span></div><div class="sw" id="a-sw">';
   CK.forEach(c=>{h+='<button class="swb" data-col="'+c+'" style="background:'+CO[c].h+'" title="'+cap(c)+'"></button>';});
   h+='</div>';
-  h+='<div class="fr"><input id="a-price" type="number" placeholder="What did it cost?"><button class="btn go" data-a="add">ADD TO CLOSET</button></div>';
+
+  h+='<div class="fr"><input id="a-price" type="number" placeholder="What did it cost?"></div>';
+  h+='<div class="fr"><button class="btn go" data-a="add" data-dest="closet" style="flex:2">＋ ADD TO CLOSET</button>';
+  h+='<button class="btn" data-a="add" data-dest="wish" style="flex:1">＋ WISHLIST</button></div>';
+
+  /* quick pick from the 10 — sub-option */
+  h+='<div class="lb" style="margin:16px 0 8px">Or quick-add a basic<span>fills the form above in one tap</span></div>';
+  h+='<div class="quick">';
+  BASICS.forEach(b=>{h+='<button class="qk" data-a="quick" data-id="'+b.id+'">'+b.n+'</button>';});
+  h+='</div>';
   h+='</div>';
 
   /* SEASON */
@@ -456,19 +651,33 @@ function rCloset(){
     h+='<button class="btn'+(W.season===s[0]?' go':'')+'" data-a="season" data-v="'+s[0]+'" style="flex:1">'+s[1]+'</button>';});
   h+='</div>';
 
+  /* SHOE TYPE FILTER — only when you own shoes with types */
+  const myShoeTypes=[...new Set(W.closet.filter(p=>p.slot==='shoe'&&p.stype).map(p=>p.stype))];
+  if(myShoeTypes.length>1){
+    h+='<div class="lb">Filter shoes<span>'+W.closet.filter(p=>p.slot==='shoe').length+' pairs in the closet</span></div>';
+    h+='<div class="quick" style="margin-bottom:12px">';
+    h+='<button class="qk'+(W.shoeFilter==='all'?' on':'')+'" data-a="shoefilter" data-v="all">All shoes</button>';
+    myShoeTypes.forEach(t=>{h+='<button class="qk'+(W.shoeFilter===t?' on':'')+'" data-a="shoefilter" data-v="'+t+'">'+SHOES[t].ic+' '+SHOES[t].n+'</button>';});
+    h+='</div>';
+  }
+
   if(W.closet.length){
     h+='<div class="grid">';
     W.closet.forEach((p,i)=>{
+      /* apply shoe filter: hide shoes not matching, keep non-shoes */
+      if(W.shoeFilter!=='all'&&p.slot==='shoe'&&p.stype!==W.shoeFilter)return;
       const n=wears(p), d=daysSince(lastWear(p));
       const stale=d!==null&&d>60;
       h+='<div class="pc'+(stale?' dead':'')+'">';
       h+='<div class="pcimg" data-a="photo" data-i="'+i+'">';
       h+=p.img?'<img src="'+p.img+'">':'<span class="ph">📷</span>';
       h+='<span class="pcsw" style="background:'+CO[p.c].h+'"></span>';
+      if(p.stype)h+='<span class="pctype">'+SHOES[p.stype].ic+'</span>';
       h+='</div>';
       h+='<button class="pcx" data-a="del" data-i="'+i+'">×</button>';
       h+='<div class="pcb"><div class="pcn">'+p.n+'</div>';
-      h+='<div class="pcm">'+cap(p.c)+' · '+SLOT[p.slot]+' · $'+p.price+'</div>';
+      const sub=p.stype?SHOES[p.stype].n:(p.bk?BOTTOMS[p.bk]:SLOT[p.slot]);
+      h+='<div class="pcm">'+cap(p.c)+' · '+sub+' · $'+p.price+'</div>';
       if(n) h+='<div class="pcw'+(stale?' bad':'')+'">'+n+' wear'+(n===1?'':'s')+' · $'+cpw(p).toFixed(2)+'/wear'+(stale?' · '+d+'d ago':'')+'</div>';
       else h+='<div class="pcw warn">Never worn · $'+p.price+' sitting idle</div>';
       h+='</div></div>';
@@ -479,6 +688,33 @@ function rCloset(){
   bindSwatch();
 }
 let selCol='black';
+function pickGuess(col){
+  selCol=col;
+  const sw=document.getElementById('a-sw');
+  if(sw)sw.querySelectorAll('.swb').forEach(x=>x.classList.toggle('on',x.dataset.col===col));
+  document.querySelectorAll('#a-detect .gchip').forEach(x=>x.classList.toggle('on',x.dataset.g===col));
+}
+function setDetected(col,rgb,ranked){
+  selCol=col;
+  const sw=document.getElementById('a-sw');
+  if(sw)sw.querySelectorAll('.swb').forEach(x=>x.classList.toggle('on',x.dataset.col===col));
+  const box=document.getElementById('a-detect');
+  if(!box)return;
+  if(ranked&&ranked.length>1){
+    let h='<div style="width:100%"><div class="detsub" style="margin-bottom:7px">'+
+      (rgb?'From photo · rgb('+rgb.join(',')+') · tap the right one':'best guesses')+'</div><div class="gchips">';
+    ranked.forEach((g,i)=>{
+      h+='<button class="gchip'+(i===0?' on':'')+'" data-g="'+g.c+'"><span style="background:'+CO[g.c].h+'"></span>'+cap(g.c)+(i===0?'':'')+'</button>';
+    });
+    h+='</div></div>';
+    box.innerHTML=h;
+    box.querySelectorAll('.gchip').forEach(b=>b.addEventListener('click',()=>pickGuess(b.dataset.g)));
+  } else {
+    box.innerHTML='<span class="detsw" style="background:'+CO[col].h+'"></span>'+
+      '<div><div class="detname">'+cap(col)+'</div>'+
+      '<div class="detsub">'+(rgb?'from photo · rgb('+rgb.join(',')+')':'matched on the grid')+'</div></div>';
+  }
+}
 function bindSwatch(){
   const sw=document.getElementById('a-sw');
   if(!sw)return;
@@ -488,12 +724,29 @@ function bindSwatch(){
       selCol=b.dataset.col;
       sw.querySelectorAll('.swb').forEach(x=>x.classList.remove('on'));
       b.classList.add('on');
+      const box=document.getElementById('a-detect');
+      if(box)box.innerHTML='<span class="detsw" style="background:'+CO[selCol].h+'"></span><div><div class="detname">'+cap(selCol)+'</div><div class="detsub">set manually</div></div>';
     });
   });
-  const bs=document.getElementById('a-base');
-  if(bs)bs.addEventListener('change',()=>{
-    document.getElementById('a-custom').style.display=bs.value==='custom'?'flex':'none';
+  const slot=document.getElementById('a-slot');
+  const shoerow=document.getElementById('a-shoerow');
+  const botrow=document.getElementById('a-botrow');
+  const stype=document.getElementById('a-stype');
+  const hint=document.getElementById('a-shoehint');
+  function syncSlot(){
+    if(!slot)return;
+    if(shoerow)shoerow.style.display=slot.value==='shoe'?'flex':'none';
+    if(botrow)botrow.style.display=slot.value==='bottom'?'flex':'none';
+  }
+  if(slot)slot.addEventListener('change',syncSlot);
+  if(stype&&hint)stype.addEventListener('change',()=>{
+    const s=SHOES[stype.value];
+    if(s){hint.style.display='block';
+      hint.innerHTML='→ '+FORM[s.form[0]]+(s.form.length>1?'–'+FORM[s.form[s.form.length-1]]:'')+
+        ' · works with '+s.bottoms.map(x=>BOTTOMS[x]).join(', ').toLowerCase()+'<br>e.g. '+s.ex;}
+    else hint.style.display='none';
   });
+  syncSlot();
 }
 
 /* ── OUTFITS ── */
@@ -529,8 +782,9 @@ function ofCard(o,f){
   h+='</div></div><div class="ofp">';
   ['top','layer','bottom','belt','shoe'].forEach(s=>{
     const p=o[s]; if(!p)return;
+    const extra=p.stype?' <span style="color:var(--dim2);font-size:10px">('+SHOES[p.stype].n+')</span>':'';
     h+='<div class="ofr"><span class="ofd" style="background:'+CO[p.c].h+'"></span>';
-    h+='<span class="ofs">'+SLOT[s]+'</span><span>'+p.n+' — '+cap(p.c)+'</span></div>';
+    h+='<span class="ofs">'+SLOT[s]+'</span><span>'+p.n+' — '+cap(p.c)+extra+'</span></div>';
   });
   h+='</div></div>';
   return h;
@@ -653,9 +907,10 @@ function fitCheck(){
 
 /* ── BASICS ── */
 function rBasics(){
-  let h='<div class="note gd">The foundation. Own these and the outfit count compounds — the first piece is worth zero outfits, the tenth is worth twelve. <b>Green means you own it.</b> Everything here reads live off your closet.</div>';
+  let h='<div class="note gd">The foundation. Own these and the outfit count compounds — the first piece is worth zero outfits, the tenth is worth twelve. <b>Green means you own it.</b> Tap <b>＋ Wishlist</b> on anything you do not have yet — it lands on the Wishlist tab with its shop links attached.</div>';
   BASICS.forEach(b=>{
     const owned=W.closet.filter(p=>p.base===b.id);
+    const onwish=W.wish.some(p=>p.base===b.id);
     const cls=owned.length?'own':b.price>150?'inv':'buy';
     const lbl=owned.length?'OWNED':b.price>150?'INVEST':'BUY';
     h+='<div class="cd gl" style="border-left-color:'+(owned.length?'var(--grn)':'var(--gold)')+'">';
@@ -672,7 +927,14 @@ function rBasics(){
     h+='<div class="cds" style="margin-top:8px;color:var(--gold)">→ '+b.tip+'</div>';
     h+='<div class="gapb" style="margin-top:10px">';
     b.buy.forEach(x=>{h+='<a href="'+x[3]+'" target="_blank" class="gapc">'+x[0]+' — '+x[1]+' · '+x[2]+'</a>';});
-    h+='</div></div>';
+    h+='</div>';
+    if(!owned.length){
+      h+='<div style="margin-top:11px">';
+      if(onwish){h+='<button class="btn" disabled style="opacity:.55;cursor:default">✓ ON YOUR WISHLIST</button>';}
+      else{h+='<button class="btn go" data-a="wishbasic" data-id="'+b.id+'">＋ ADD TO WISHLIST</button>';}
+      h+='</div>';
+    }
+    h+='</div>';
   });
   document.getElementById('basics').innerHTML=h;
 }
@@ -812,9 +1074,146 @@ function rSales(){
   document.getElementById('sales').innerHTML=h;
 }
 
+/* ── WISHLIST ── */
+function rWish(){
+  let h='<div class="note gd"><b>Everything you want to buy, in one place.</b><br><br>Add pieces from the Closet tab (hit <b>Wishlist</b> instead of Add to Closet) or straight off the <b>10 Basics</b> tab — those carry their shop links with them. When you buy something, hit <b>I bought it</b> and it moves into your closet and recalculates your outfits.</div>';
+  if(!W.wish.length){
+    h+='<div class="emp"><b>Nothing saved yet.</b><br><br>Go to the <b>10 Basics</b> tab and tap ＋ Add to Wishlist on anything you do not own — it lands here with links to buy it.</div>';
+    document.getElementById('wish').innerHTML=h;return;
+  }
+  const total=W.wish.reduce((a,b)=>a+(b.price||0),0);
+  h+='<div class="hero"><div class="hs big"><div class="l">On the list</div><div class="v">'+W.wish.length+'</div><div class="s">piece'+(W.wish.length===1?'':'s')+' you want</div></div>';
+  h+='<div class="hs"><div class="l">Total if bought</div><div class="v" style="color:var(--txt)">$'+total+'</div><div class="s">across the list</div></div></div>';
+  h+='<div class="lb">Saved to buy</div>';
+  W.wish.forEach((p,i)=>{
+    h+='<div class="wcard">';
+    h+='<div class="wthumb">';
+    h+=p.img?'<img src="'+p.img+'">':'<span class="ph" style="font-size:22px;opacity:.3">🛍️</span>';
+    h+='<span class="pcsw" style="background:'+CO[p.c].h+'"></span></div>';
+    h+='<div class="wbody">';
+    h+='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">';
+    h+='<div><div class="pcn" style="font-size:14px">'+p.n+'</div>';
+    h+='<div class="pcm">'+cap(p.c)+' · '+SLOT[p.slot]+(p.price?' · ~$'+p.price:'')+'</div></div>';
+    h+='<button class="pcx" style="position:static" data-a="wdel" data-i="'+i+'">×</button></div>';
+    /* links */
+    const links=p.links||(p.url?[{store:p.store||'Open',url:p.url,price:''}]:[]);
+    if(links.length){
+      h+='<div class="gapb" style="margin-top:9px">';
+      links.forEach(l=>{h+='<a href="'+l.url+'" target="_blank" class="gapc">'+l.store+(l.price?' · '+l.price:'')+' ↗</a>';});
+      h+='</div>';
+    }
+    h+='<div style="margin-top:10px"><button class="pcbtn go" style="max-width:160px" data-a="wbuy" data-i="'+i+'">✓ I bought it</button></div>';
+    h+='</div></div>';
+  });
+  document.getElementById('wish').innerHTML=h;
+}
+
+/* ── COLOR GUIDE ── */
+const NEUTRAL=['black','white','grey','navy','charcoal','cream','beige','lightgrey'];
+function rColor(){
+  let h='<div class="note gd"><b>The whole colour system in one place.</b><br><br>Your outfit engine already enforces every one of these rules automatically — nothing broken ever shows up on the Outfits tab. This tab is for when you are standing in a store holding two things and want to know if they go. Tap any colour to see everything it pairs with.</div>';
+
+  /* core rules */
+  h+='<div class="lb">The five rules that cover 90%</div>';
+  const CR=[
+    ['Neutrals go with everything','Black, white, grey, navy, charcoal, cream and beige pair with any colour and with each other. Build the outfit on neutrals, then add at most one colour.'],
+    ['Warm with warm, cool with cool','Camel, tan, cream, cognac, olive and brown live together. Black, grey, navy and white live together. When you mix, it is one warm piece on a cool base, or the reverse — never a free-for-all.'],
+    ['One statement piece max','If the top has colour, texture or pattern, the bottom stays neutral. If the trousers are wide and pleated, that is already the statement — plain top.'],
+    ['Belt matches the shoe','Black shoes, black belt. Brown or cognac shoes, brown belt. Metals match too — silver buckle with a silver watch.'],
+    ['Tone-on-tone always works','Head-to-toe in one colour reads as intentional and expensive, as long as the textures vary. Ribbed knit, leather, pleated trouser — all black.']
+  ];
+  CR.forEach((r,i)=>{
+    h+='<div class="cd gl"><div class="cdh">'+String(i+1).padStart(2,'0')+' · '+r[0]+'</div><div class="cds">'+r[1]+'</div></div>';
+  });
+
+  /* interactive matcher */
+  h+='<div class="lb">Does it match?<span>tap two colours</span></div>';
+  h+='<div class="frm"><div class="mono" style="font-size:9px;color:var(--dim);letter-spacing:1px;margin-bottom:8px">PIECE ONE</div><div class="sw" id="cm-a">';
+  CK.forEach(c=>{h+='<button class="swb" data-cm="a" data-c="'+c+'" style="background:'+CO[c].h+'" title="'+cap(c)+'"></button>';});
+  h+='</div>';
+  h+='<div class="mono" style="font-size:9px;color:var(--dim);letter-spacing:1px;margin:10px 0 8px">PIECE TWO</div><div class="sw" id="cm-b">';
+  CK.forEach(c=>{h+='<button class="swb" data-cm="b" data-c="'+c+'" style="background:'+CO[c].h+'" title="'+cap(c)+'"></button>';});
+  h+='</div>';
+  h+='<div id="cm-out" class="detbox" style="margin-top:12px"><span style="color:var(--dim2)">Pick a colour in each row.</span></div>';
+  h+='</div>';
+
+  /* full pairing grid */
+  h+='<div class="lb">Every colour, what it pairs with</div>';
+  CK.forEach(c=>{
+    const co=CO[c];
+    const partners=[].concat(co.c);
+    h+='<div class="cd"><div style="display:flex;align-items:center;gap:10px;margin-bottom:9px">';
+    h+='<span class="detsw" style="width:26px;height:26px;background:'+co.h+'"></span>';
+    h+='<div class="cdh" style="font-size:18px">'+cap(c)+'</div>';
+    h+='<span class="pill '+(co.w?'buy':'own')+'" style="margin-left:auto">'+(co.w?'WARM':'COOL/NEUTRAL')+'</span></div>';
+    h+='<div style="display:flex;gap:6px;flex-wrap:wrap">';
+    partners.forEach(p=>{if(!CO[p])return;h+='<span class="chip"><span style="background:'+CO[p].h+'"></span>'+cap(p)+'</span>';});
+    h+='</div>';
+    if(co.t&&co.t.length){h+='<div class="cds" style="margin-top:8px;font-size:10px;color:var(--dim)">Tone-on-tone: '+co.t.map(x=>cap(x)).join(' · ')+'</div>';}
+    h+='</div>';
+  });
+  document.getElementById('color').innerHTML=h;
+  bindMatcher();
+}
+let cmA=null,cmB=null;
+function bindMatcher(){
+  document.querySelectorAll('[data-cm]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const row=b.dataset.cm;
+      document.querySelectorAll('[data-cm="'+row+'"]').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      if(row==='a')cmA=b.dataset.c;else cmB=b.dataset.c;
+      const out=document.getElementById('cm-out');
+      if(!cmA||!cmB){out.innerHTML='<span style="color:var(--dim2)">Pick a colour in each row.</span>';return;}
+      const ok=cmatch(cmA,cmB);
+      const warm=(CO[cmA].w===CO[cmB].w);
+      let msg;
+      if(cmA===cmB)msg='Same colour — tone-on-tone. Works if the textures differ.';
+      else if(ok)msg=(warm?'Both '+(CO[cmA].w?'warm':'cool')+' — clean pairing.':'One warm, one cool, but they sit on the grid together. Good.');
+      else msg='Not on the grid. Put a neutral between them, or swap one out.';
+      out.innerHTML='<span class="detsw" style="background:'+CO[cmA].h+'"></span><span class="detsw" style="background:'+CO[cmB].h+'"></span>'+
+        '<div style="flex:1"><div class="detname" style="color:'+(ok?'var(--grn)':'var(--red)')+'">'+(ok?'MATCH':'SKIP IT')+'</div>'+
+        '<div class="detsub">'+cap(cmA)+' + '+cap(cmB)+' · '+msg+'</div></div>';
+    });
+  });
+}
+
+/* ── ONLINE SHOPS ── */
+const SHOPS=[
+ {g:'YOUR SAVED PIECES',s:[
+  {n:'Josept — Maro',d:'The piece you saved. Add it to your wishlist to track it against your outfit count.',u:'https://josepht.ca/products/maro',c:'var(--gold)'},
+  {n:'Archetype — Slim Crop Henley LS, Black',d:'Cropped slim henley in black. A henley is one of your top-10 basics and black is your most versatile — this pairs with everything you own.',u:'https://archetypeconcept.com/products/the-slim-crop-henley-longsleeve-black',c:'var(--gold)'}]},
+ {g:'YOUR GO-TO STORES',s:[
+  {n:'Zara — Men',d:'Runs slim and short — size up if you are between sizes. Check your Zara basket and the sale section; the outfit engine already knows Zara sizing. Oxford shirts, pleated trousers, slim denim, leather belts.',u:'https://www.zara.com/us/en/man-l720.html',c:'var(--gold)'},
+  {n:'Zara — Sale (Men)',d:'Your saved basket items often drop here. Same slim cut, marked down. Grab pleated trousers and knits on sale.',u:'https://www.zara.com/us/en/man-special-prices-l806.html',c:'var(--org)'},
+  {n:'Pull&Bear — Men',d:'European casual, runs slim and young. Good for tees, henleys, relaxed trousers and cheap trend pieces to test a silhouette before you commit.',u:'https://www.pullandbear.com/us/man-n6417',c:'var(--pur)'},
+  {n:'Pull&Bear — Sale',d:'Deep markdowns on basics. Fine place to buy a plain black tee or hoodie to test the fit.',u:'https://www.pullandbear.com/us/discount-n6453',c:'var(--org)'},
+  {n:'Uniqlo — Men',d:'True to size, the most reliable of the bunch. The Supima tee, merino turtleneck and cardigan are the best quality-to-price in your whole guide. Free shipping over $49.',u:'https://www.uniqlo.com/us/en/men',c:'var(--red)'},
+  {n:'Uniqlo — Sweaters & Knitwear',d:'Merino crew, extra-fine turtleneck, merino cardigan — all around $49.90. These are the picks flagged in your 10 Basics.',u:'https://www.uniqlo.com/us/en/men/tops/sweaters-knitwear',c:'var(--red)'}]},
+ {g:'BEST FOR SPECIFIC PIECES',s:[
+  {n:'Buck Mason — Henleys',d:'The best henley fabric on the market, true to size with a curved hem. Worth ordering a couple to dial in the fit.',u:'https://www.buckmason.com/collections/mens-henleys',c:'var(--blu)'},
+  {n:'MANGO — Men',d:'European slim cut. The Nappa leather jacket at ~$239 is the single best value in your guide. Leather boots, trousers, cardigans.',u:'https://shop.mango.com/us/en/c/men',c:'var(--org)'},
+  {n:'Everlane — Men',d:'True to size, boxy through the body. Clean fitted tees, chinos and basics with transparent pricing.',u:'https://www.everlane.com/collections/shop-all-mens-clothing',c:'var(--grn)'},
+  {n:'All Saints — Leather',d:'Very slim, size up on the biker. Drops from ~$349 to under $110 on sale — never pay full.',u:'https://www.allsaints.com/collections/mens-leather-jackets',c:'var(--pur)'}]}
+];
+function rShop(){
+  let h='<div class="note gd"><b>Everywhere worth ordering from, one tap away.</b><br><br>Your saved pieces are pinned at the top. Every store below is tuned to how it fits you — the sizing notes match what the outfit engine uses. See something you want? Add it to your <b>Wishlist</b> so it counts toward your outfit math before you spend.</div>';
+  SHOPS.forEach(g=>{
+    h+='<div class="lb">'+g.g+'</div>';
+    g.s.forEach(s=>{
+      h+='<div class="cd gl" style="border-left-color:'+s.c+'">';
+      h+='<div class="cdh">'+s.n+'</div>';
+      h+='<div class="cds">'+s.d+'</div>';
+      h+='<div class="gapb"><a href="'+s.u+'" target="_blank" class="gapc">OPEN →</a></div></div>';
+    });
+  });
+  document.getElementById('shop').innerHTML=h;
+}
+
 /* ── RULES ── */
 const RULES=[
  ['NEUTRALS FIRST','Build entirely in black, white, cream, charcoal, navy, grey, and camel before you add any colour. Neutrals mix freely — every piece pairs with every other piece, which is exactly why the outfit count compounds so fast.'],
+ ['THE SHOE SETS THE FORMALITY','A dress shoe never goes with shorts. A sandal or clog never goes with trousers. A work boot stays casual to smart. When you tag a shoe by type, the engine locks it to the right bottoms and the right dressiness — so your Aldo pointed-toes only show up with trousers, your Birkenstocks only with shorts and jeans, and your Timberlands never sneak into a dressy fit.'],
  ['BELT MATCHES BOOT','Black boots means a black belt. Brown or cognac boots means a brown belt. This rule does not bend, and the outfit engine enforces it — you will never see a mismatched pair generated.'],
  ['WIDE BOTTOM, SLIM TOP','Pleated or baggy trousers pair with a fitted tee or a slim henley. Not an oversized shirt. Oversized on oversized reads as shapeless, not relaxed. The engine enforces this too.'],
  ['WARM STAYS WITH WARM','Camel, tan, cream, and cognac live together. Black, grey, navy, and white live together. Mixing means one warm piece against a cool base, or the reverse. Never a free-for-all.'],
@@ -836,35 +1235,80 @@ function rRules(){
 }
 
 /* ── ACTIONS ── */
-function SVA(){S('closet',W.closet);S('fav',W.fav);S('meas',W.meas);S('care',W.care);S('season',W.season);}
-function RA(){rCloset();rOutfits();rNext();rFit();rBasics();rBrands();rStores();rCare();rSales();rRules();}
+function SVA(){S('closet',W.closet);S('wish',W.wish);S('fav',W.fav);S('meas',W.meas);S('care',W.care);S('season',W.season);S('shoeFilter',W.shoeFilter);}
+function RA(){rCloset();rOutfits();rWish();rNext();rFit();rColor();rBasics();rShop();rBrands();rStores();rCare();rSales();rRules();}
 function toast(m){const t=document.getElementById('tst');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1700);}
 
-let photoIdx=null;
+let photoIdx=null, capImg=null, quickBase=null;
 document.addEventListener('click',function(e){
   const b=e.target.closest('[data-a]');if(!b)return;
   const a=b.dataset.a;
   if(a==='add'){
-    const bs=document.getElementById('a-base').value;
+    const dest=b.dataset.dest||'closet';
+    const n=document.getElementById('a-name').value.trim();
+    if(!n){toast('Give it a name');return;}
     const pr=parseFloat(document.getElementById('a-price').value)||0;
-    let p;
-    if(bs&&bs!=='custom'){
-      const base=B_(bs);
-      p={id:'p'+Date.now(),base:bs,n:base.n,slot:base.slot,c:selCol,form:base.form,fit:base.fit,price:pr||base.price,wears:[],added:today()};
+    const base=quickBase||'custom';
+    const bd=quickBase?B_(quickBase):null;
+    const slot=document.getElementById('a-slot').value;
+    const p={id:'p'+Date.now(),base:base,n:n,slot:slot,
+      c:selCol,form:bd?bd.form:[1,2],fit:document.getElementById('a-fit').value,
+      price:pr||(bd?bd.price:0),wears:[],added:today()};
+    if(slot==='shoe'){const st=document.getElementById('a-stype').value;
+      if(st){p.stype=st;p.form=SHOES[st].form.slice();}}
+    if(slot==='bottom'){const bk=document.getElementById('a-bk').value;if(bk)p.bk=bk;}
+    if(capImg)p.img=capImg;
+    if(dest==='wish'){
+      W.wish.push(p);SVA();RA();toast('Added to wishlist');
     } else {
-      const n=document.getElementById('a-name').value.trim();
-      if(!n){toast('Give it a name');return;}
-      p={id:'p'+Date.now(),base:'custom',n:n,slot:document.getElementById('a-slot').value,
-         c:selCol,form:[1,2],fit:document.getElementById('a-fit').value,price:pr,wears:[],added:today()};
+      const before=gen(W.closet).length;
+      W.closet.push(p);SVA();RA();
+      const after=gen(W.closet).length;
+      toast(after>before?'+'+(after-before)+' new outfits':'Added to closet');
     }
-    const before=gen(W.closet).length;
-    W.closet.push(p);SVA();RA();
-    const after=gen(W.closet).length;
-    toast(after>before?'+'+(after-before)+' new outfits':'Added — no new outfits yet');
+    capImg=null;quickBase=null;
   }
+  else if(a==='quick'){
+    const bd=B_(b.dataset.id);if(!bd)return;
+    quickBase=bd.id;
+    document.getElementById('a-name').value=bd.n;
+    const sl=document.getElementById('a-slot');if(sl)sl.value=bd.slot;
+    const ft=document.getElementById('a-fit');if(ft)ft.value=bd.fit==='-'?'-':bd.fit;
+    const pc=document.getElementById('a-price');if(pc&&!pc.value)pc.value=bd.price;
+    /* default shoe type / bottom kind for the basics */
+    const BASE_STYPE={b2:'boot_dress',b8:'sneaker_retro'};
+    const BASE_BK={b1:'trouser',b10:'jean'};
+    const shoerow=document.getElementById('a-shoerow'),botrow=document.getElementById('a-botrow');
+    const st=document.getElementById('a-stype'),bk=document.getElementById('a-bk');
+    if(shoerow)shoerow.style.display=bd.slot==='shoe'?'flex':'none';
+    if(botrow)botrow.style.display=bd.slot==='bottom'?'flex':'none';
+    if(st&&BASE_STYPE[bd.id]){st.value=BASE_STYPE[bd.id];st.dispatchEvent(new Event('change'));}
+    if(bk&&BASE_BK[bd.id])bk.value=BASE_BK[bd.id];
+    setDetected(bd.cols[0]);
+    document.querySelector('.frm').scrollIntoView({behavior:'smooth',block:'start'});
+    toast('Loaded '+bd.n+' — snap a photo or hit add');
+  }
+  else if(a==='capshot'){document.getElementById('cf').click();}
   else if(a==='del'){W.closet.splice(+b.dataset.i,1);SVA();RA();}
   else if(a==='photo'){photoIdx=+b.dataset.i;document.getElementById('pf').click();}
+  else if(a==='wdel'){W.wish.splice(+b.dataset.i,1);SVA();rWish();toast('Removed');}
+  else if(a==='wbuy'){
+    const it=W.wish.splice(+b.dataset.i,1)[0];
+    if(it){delete it.url;delete it.store;delete it.links;it.wears=[];it.added=today();
+      const before=gen(W.closet).length;W.closet.push(it);SVA();RA();
+      const after=gen(W.closet).length;
+      toast(after>before?'Owned! +'+(after-before)+' outfits':'Moved to closet');}
+  }
+  else if(a==='wishbasic'){
+    const bd=B_(b.dataset.id);if(!bd)return;
+    if(W.wish.some(p=>p.base===bd.id)){toast('Already on your wishlist');return;}
+    W.wish.push({id:'p'+Date.now(),base:bd.id,n:bd.n,slot:bd.slot,c:bd.cols[0],
+      form:bd.form,fit:bd.fit,price:bd.price,
+      links:bd.buy.map(x=>({store:x[0],label:x[1],price:x[2],url:x[3]})),added:today()});
+    SVA();RA();toast(bd.n+' added to wishlist');
+  }
   else if(a==='season'){W.season=b.dataset.v;SVA();RA();}
+  else if(a==='shoefilter'){W.shoeFilter=b.dataset.v;S('shoeFilter',W.shoeFilter);rCloset();}
   else if(a==='fav'){
     const k=b.dataset.k,i=W.fav.indexOf(k);
     if(i>-1)W.fav.splice(i,1);else W.fav.push(k);
@@ -908,6 +1352,31 @@ document.getElementById('pf').addEventListener('change',function(e){
   r.readAsDataURL(f);e.target.value='';
 });
 
+/* camera capture for the ADD form → detect colour + thumbnail */
+document.getElementById('cf').addEventListener('change',function(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    const im=new Image();
+    im.onload=()=>{
+      /* colour detection off the full-res centre patch */
+      const res=detectFromImage(im);
+      setDetected(res.color,res.rgb,res.ranked);
+      /* compressed thumbnail for storage */
+      const MX=600;let w=im.width,h=im.height;
+      if(w>h&&w>MX){h=h*MX/w;w=MX;}else if(h>MX){w=w*MX/h;h=MX;}
+      const c=document.createElement('canvas');c.width=w;c.height=h;
+      c.getContext('2d').drawImage(im,0,0,w,h);
+      capImg=c.toDataURL('image/jpeg',0.7);
+      const th=document.getElementById('a-thumb');
+      if(th)th.innerHTML='<img src="'+capImg+'">';
+      toast('Read: '+cap(res.color)+(res.balanced?' · balanced':''));
+    };
+    im.src=ev.target.result;
+  };
+  r.readAsDataURL(f);e.target.value='';
+});
+
 document.querySelectorAll('nav button').forEach(b=>{
   b.addEventListener('click',()=>{
     document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));
@@ -920,6 +1389,7 @@ document.querySelectorAll('nav button').forEach(b=>{
 });
 RA();
 window.W=W;window.gen=gen;window.cmatch=cmatch;window.BASICS=BASICS;window.sizeFor=sizeFor;
+window.nearestColor=nearestColor;window.detectFromImage=detectFromImage;
 </script>
 </body>
 </html>
